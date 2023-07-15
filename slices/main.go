@@ -10,20 +10,20 @@ func main(){
 
 	// remove from index 1 to index 4
 	deleteTest := []int{3, 2, 4, 3, 1, 2,4,6}
-	fmt.Println("deleteTest: ", deleteTest)
-	fmt.Printf("\n\nDelete: %v", slices.Delete(deleteTest, 1,4))
+	fmt.Printf("deleteTest variable: %v\n", deleteTest)
+	fmt.Printf("Delete: %v\n", slices.Delete(deleteTest, 1,4))
 
 	// reverse slice
 	reverseTest := []int{3, 2, 4, 3, 1, 2,4,6}
-	fmt.Println("reverseTest: ", reverseTest)
+	fmt.Printf("reverseTest variable: %v\n", reverseTest)
 	slices.Reverse(reverseTest)
-	fmt.Printf("\nReverse: %v", reverseTest)
+	fmt.Printf("Reverse: %v\n", reverseTest)
 	
 	// sort
 	sortTest := []int{3, 2, 4, 3, 1, 2,4,6}
-	fmt.Println("sortTest: ", sortTest)
+	fmt.Printf("sortTest variable: %v\n", sortTest)
 	slices.Sort(sortTest)
-	fmt.Printf("\nSort: %v", sortTest)
+	fmt.Printf("Sort: %v\n", sortTest)
 
 	// replace
 	replaceTest := []int{3, 2, 4, 3, 1, 2,4,6}
