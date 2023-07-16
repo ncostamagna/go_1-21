@@ -27,16 +27,16 @@ func main(){
 
 	// replace
 	replaceTest := []int{3, 2, 4, 3, 1, 2,4,6}
-	fmt.Println("replaceTest: ", replaceTest)
-	replaceTest = slices.Replace(replaceTest, 1, 3, 10, 11, 12)
-	fmt.Printf("\nReplace: %v", replaceTest)
+	fmt.Printf("replaceTest variable: %v\n", replaceTest)
+	replaceTest = slices.Replace(replaceTest, 3, 3, 10, 11, 12)
+	fmt.Printf("Replace: %v\n", replaceTest)
 
 	// Clone
 	cloneTest := []int{3, 2, 4, 3, 1, 2,4,6}
-	fmt.Println("cloneTest: ", cloneTest)
+	fmt.Printf("cloneTest value: %v\n", cloneTest)
 	clonedTest := slices.Clone(cloneTest)
 	cloneTest[2] = 5 // changue same value
-	fmt.Printf("\nClone: %v & %v", cloneTest, clonedTest)
+	fmt.Printf("Clone: %v & %v\n", cloneTest, clonedTest)
 
 	// Compare 
 	// The result is 0 if s1 == s2, -1 if s1 < s2, and +1 if s1 > s2
@@ -44,20 +44,20 @@ func main(){
 	compare2Test := []int{3, 2, 4, 3, 1, 2,4,6}
 
 	r := slices.Compare(compare1Test, compare2Test)
-	fmt.Printf("\nCompare: %d - %v & %v", r, compare1Test, compare2Test)
+	fmt.Printf("Compare: %d - %v & %v\n", r, compare1Test, compare2Test)
 
 	compare2Test[2] = 5
 	r = slices.Compare(compare1Test, compare2Test)
-	fmt.Printf("\nCompare: %d - %v & %v", r, compare1Test, compare2Test)
+	fmt.Printf("Compare: %d - %v & %v\n", r, compare1Test, compare2Test)
 
 
 	// Max 
 	maxTest := []int{3, 2, 4, 3, 1, 2,4,6}
-	fmt.Printf("\nMax: %d", slices.Max(maxTest))
+	fmt.Printf("Max: %d\n", slices.Max(maxTest))
 
 	// Min
 	minTest := []int{3, 2, 4, 3, 1, 2,4,6}
-	fmt.Printf("\nMin: %d", slices.Min(minTest))
+	fmt.Printf("Min: %d\n", slices.Min(minTest))
 
 
 	// BinarySearch
