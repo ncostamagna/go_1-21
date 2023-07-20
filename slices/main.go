@@ -35,7 +35,7 @@ func main(){
 	cloneTest := []int{3, 2, 4, 3, 1, 2,4,6}
 	fmt.Printf("cloneTest value: %v\n", cloneTest)
 	clonedTest := slices.Clone(cloneTest)
-	cloneTest[2] = 5 // changue same value
+	cloneTest[2] = 5 // change same value
 	fmt.Printf("Clone: %v & %v\n", cloneTest, clonedTest)
 
 	// Compare 
@@ -61,44 +61,46 @@ func main(){
 
 
 	// BinarySearch
-	binarySrcTest := []int{3, 2, 4, 3, 1, 2,4,6}
-	v, found := slices.BinarySearch(binarySrcTest, 5)
-	fmt.Printf("\nBinarySearch - found: %t | value: %d", found, v)
+	binarySrcTest := []int{3, 2, 4, 7,3, 1, 2,4,6}
+	i, found := slices.BinarySearch(binarySrcTest, 7)
+	fmt.Printf("BinarySearch - found: %t | position: %d\n", found, i)
 	
 	// the slice must be ordered
 	slices.Sort(binarySrcTest)
-	v, found = slices.BinarySearch(binarySrcTest, 5)
-	fmt.Printf("\nBinarySearch - found: %t | value: %d", found, v)
+	
+	i, found = slices.BinarySearch(binarySrcTest, 7)
+	fmt.Printf("BinarySearch - found: %t | position: %d\n", found, i)
 
 
 	// Compact 
 	// Compact replaces consecutive runs of equal elements with a single copy.
 	compactTest := []int{1,1,2,2,9,9,3,3,2,1,10,10,5,1}
-	fmt.Printf("\nCompact: %v", slices.Compact(compactTest))
+	fmt.Printf("Compact: %v\n", slices.Compact(compactTest))
+
 	slices.Sort(compactTest)
-	fmt.Printf("\nCompact: %v", slices.Compact(compactTest))
+	fmt.Printf("Compact: %v\n", slices.Compact(compactTest))
 
 
 	// Index returns the index of the first occurrence of v in s, or -1 if not present.
 	indexTest := []int{1,2,3,1,2,8}
-	fmt.Printf("\nIndex: %d", slices.Index(indexTest, 8))
-	fmt.Printf("\nIndex: %d", slices.Index(indexTest, 2))
-	fmt.Printf("\nIndex: %d", slices.Index(indexTest, 9))
+	fmt.Printf("Index: %d\n", slices.Index(indexTest, 8))
+	fmt.Printf("Index: %d\n", slices.Index(indexTest, 2))
+	fmt.Printf("Index: %d\n", slices.Index(indexTest, 9))
 	
 	isSortedTest := []int{1,2,3,1,2,8}
-	fmt.Printf("\nIsSorted: %t", slices.IsSorted(isSortedTest))
+	fmt.Printf("IsSorted: %t\n", slices.IsSorted(isSortedTest))
 	slices.Sort(isSortedTest)
-	fmt.Printf("\nIsSorted: %t", slices.IsSorted(isSortedTest))
+	fmt.Printf("IsSorted: %t\n", slices.IsSorted(isSortedTest))
 
 	// Insert inserts the values v... into  at index i, returning the modified slice.
 	insertTest := []int{1,2,3,3,1,2,8,1}
-	fmt.Printf("\nInsert: %v", slices.Insert(insertTest, 4, 10, 20, 22))
-	fmt.Printf("\nInsert: %v", slices.Insert(insertTest, 6, 11, 11, 11))
+	fmt.Printf("Insert: %v\n", slices.Insert(insertTest, 4, 10, 20, 22))
+	fmt.Printf("Insert: %v\n", slices.Insert(insertTest, 6, 11, 11, 11))
 
 
 	containsTest := []int{1,2,3,3,1,2,8,1}
-	fmt.Printf("\nContains: %v", slices.Contains(containsTest, 3))
-	fmt.Printf("\nContains: %v", slices.Contains(containsTest, 9))
+	fmt.Printf("Contains: %v\n", slices.Contains(containsTest, 3))
+	fmt.Printf("Contains: %v\n", slices.Contains(containsTest, 9))
 
 	fmt.Println()
 }
