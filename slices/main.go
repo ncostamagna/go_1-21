@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"slices"
 	"strconv"
+	"cmp"
 )
 
 func main(){
@@ -121,4 +122,25 @@ func main(){
 	fmt.Printf("EqualFunc: %t\n", equal)
 
 	fmt.Println()
+
+
+
+	type Person struct {
+		Name string
+		Age  int
+	}
+	people := []Person{
+		{"Azul", 25},
+		{"Celeste", 40},
+		{"Nahuel", 33},
+		{"Ulises", 67},
+	}
+
+	// search 'Celeste' name in our slice
+	n, found := slices.BinarySearchFunc(people, Person{"Celeste", 0}, func(a, b Person) int {
+		return cmp.Compare(a.Name, b.Name)
+	})
+
+	fmt.Println("BinarySearchFunc: Celeste - ", n, found)
+
 }
