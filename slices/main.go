@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"slices"
+	"strconv"
 )
 
 func main(){
@@ -101,6 +102,23 @@ func main(){
 	containsTest := []int{1,2,3,3,1,2,8,1}
 	fmt.Printf("Contains: %v\n", slices.Contains(containsTest, 3))
 	fmt.Printf("Contains: %v\n", slices.Contains(containsTest, 9))
+
+	equalTest := []int{40,1,5,1,3}
+	fmt.Printf("Equal: %t\n", slices.Equal(equalTest, []int{40,5,1,1,3}))
+	fmt.Printf("Equal: %t\n", slices.Equal(equalTest, []int{4,3}))
+	fmt.Printf("Equal: %t\n", slices.Equal(equalTest, []int{40,1,5,1,3}))
+
+
+	numbers := []int{0, 42, 8}
+	strings := []string{"000", "42", "8"}
+	equal := slices.EqualFunc(numbers, strings, func(n int, s string) bool {
+		sn, err := strconv.ParseInt(s, 0, 64)
+		if err != nil {
+			return false
+		}
+		return n == int(sn)
+	})
+	fmt.Printf("EqualFunc: %t\n", equal)
 
 	fmt.Println()
 }
