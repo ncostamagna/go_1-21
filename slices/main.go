@@ -143,4 +143,8 @@ func main(){
 
 	fmt.Println("BinarySearchFunc: Celeste - ", n, found)
 
+
+	names := []string{"Alice", "Bob", "Vera"}
+	fmt.Println("valores iguales:", slices.Compare(names, []string{"Alice", "Bob"}))
+	fmt.Println("valores diferentes:", slices.Compare(names, []string{"Alice", "Zoe"}))
 }

@@ -7,7 +7,7 @@ import (
 )
 func main(){
 	myNanValue := math.NaN()
-	var myFloatValue float64 = 20
+	var myFloatValue float64 = -20000
 
 	if myNanValue < myFloatValue {
 		fmt.Println("test")
@@ -23,4 +23,5 @@ func main(){
 
 	fmt.Printf("Numbers (%f, %f) - Less: %t\n", myNanValue,myFloatValue, cmp.Less(myNanValue, myFloatValue) )
 
+fmt.Println()
 }
